@@ -27,5 +27,17 @@ class ApplicationController < ActionController::Base
     render({ :template => "calculation_templates/rand_results.html.erb"})
   end
 
+  def blank_sqrt_form
+    
+    render({ :template => "calculation_templates/sqrt_form.html.erb"})
+  end
+
+  def calc_sqrt
+    
+    @num = params.fetch("lion")
+    @sqrt_of_num = @num.to_f ** (1/2)
+
+    render({ :template => "calculation_templates/sqrt_results.html.erb"})
+  end
 
 end
