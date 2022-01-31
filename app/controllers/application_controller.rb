@@ -32,10 +32,10 @@ class ApplicationController < ActionController::Base
     render({ :template => "calculation_templates/sqrt_form.html.erb"})
   end
 
-  def calc_sqrt
+  def calculate_sqrt
     
     @num = params.fetch("lion")
-    @sqrt_of_num = @num.to_f ** (1/2)
+    @sqrt_of_num = @num.to_f ** 0.5
 
     render({ :template => "calculation_templates/sqrt_results.html.erb"})
   end
