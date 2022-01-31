@@ -1,14 +1,20 @@
-<div>
-  <label for="apr">APR</label>
-  <input id="apr" placeholder="E.g. 5.42" name="ann_rate">
-</div>
+<form action="/payment/results">
+  <div>
+    <label for="apr">APR</label>
+    <input id="apr" placeholder="E.g. 5.42" name="ann_rate">
+  </div>
 
-<div>
-  <label for="years">Number of years</label>
-  <input id="years" placeholder="Remaining years" name="years">
-</div>
+  <div>
+    <label for="years">Number of years</label>
+    <input id="years" placeholder="Remaining years" name="years">
+  </div>
 
-<div>
-  <label for="principal">Principal</label>
-  <input id="principal" placeholder="Remaning principal" name="principal">
-</div>
+  <div>
+    <label for="principal">Principal</label>
+    <input id="principal" placeholder="Remaning principal" name="principal">
+  </div>
+
+  <div>
+    <button>Calculate monthly payment</button>
+  </div>
+</form>

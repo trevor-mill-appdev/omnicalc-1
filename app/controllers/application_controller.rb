@@ -48,12 +48,14 @@ class ApplicationController < ActionController::Base
 
   def calculate_pmt
 
-    @rate_ann = params.fetch("ann_rate").to_f / 100
+    @rate_ann = params.fetch("ann_rate").to_f
     @years = params.fetch("years").to_i
+    @months = @years * 12
     @principal = params.fetch("principal").to_f
-    @rate_mon = @rate_ann / 12
+    @rate_mon = (@rate_ann / 100) / 12
     @numer = @rate_mon * @principal
-    @denom = 1 - ((1 + @rate_mon) ** (@years * 12))
+    @mult = (1 + @rate_mon) ** (- @months)
+    @denom = 1 - @mult
     @payment = @numer / @denom
 
 
