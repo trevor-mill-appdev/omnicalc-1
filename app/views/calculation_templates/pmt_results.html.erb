@@ -2,7 +2,7 @@
 
 <dl>
   <dt>APR</dt>
-  <dd><%= @rate_ann %></dd>
+  <dd><%= @rate_ann.to_s(:percentage) %></dd>
 
   <dt>Number of years</dt>
   <dd><%= @years %></dd>
@@ -11,7 +11,7 @@
   <dd><%= @principal %></dd>
 
   <dt>Payment</dt>
-  <dd><%= @payment %></dd>
+  <dd><%= @payment.to_s(:currency) %></dd>
 </dl>
 
 <a href = "/payment/new">Calculate another payment</a>
