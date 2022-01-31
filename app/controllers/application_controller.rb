@@ -40,4 +40,23 @@ class ApplicationController < ActionController::Base
     render({ :template => "calculation_templates/sqrt_results.html.erb"})
   end
 
+  def blank_pmt_form
+
+    render({ :template => "calculation_templates/pmt_form.html.erb"})
+  end
+
+
+  def calculate_pmt
+
+    @rate_ann = params.fetch("ann_rate").to_f / 100
+    @years = params.fetch("years").to_i
+    @principal = params.fetch("principal").to_f
+    @rate_mon = @rate_ann / 12
+    @numer = @rate_mon * @principal
+    @denom = 1 - ((1 + @rate_mon) ** (@years * 12))
+    @payment = @numer / @denom
+
+
+    render({ :template => "calculation_templates/pmt_results.html.erb"})
+  end
 end
