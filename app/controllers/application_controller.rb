@@ -13,6 +13,11 @@ class ApplicationController < ActionController::Base
     render({ :template => "calculation_templates/square_results_form.html.erb"})
   end
 
+  def blank_random_form
+    
+    render({ :template => "calculation_templates/rand_form.html.erb"})
+  end
+
   def calculate_random
 
     @lower = params.fetch("user_min").to_f
