@@ -57,6 +57,8 @@ class ApplicationController < ActionController::Base
     @mult = (1 + @rate_mon) ** (- @months)
     @denom = 1 - @mult
     @payment = @numer / @denom
+    @rate_ann = '%.4f' % @rate_ann
+  
 
 
     render({ :template => "calculation_templates/pmt_results.html.erb"})
